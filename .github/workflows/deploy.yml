@@ -1,0 +1,51 @@
+name: Deploy Marp deck to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install marp-cli
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Generate HTML and PDF
+        run: |
+          marp --no-stdin --html slides.md -o slides.html
+          marp --no-stdin --html --allow-local-files slides.md -o slides.pdf 2>/dev/null || true
+
+      - name: Organize output for Pages
+        run: |
+          mkdir -p _site
+          cp slides.html _site/index.html
+          cp slides.pdf _site/slides.pdf 2>/dev/null || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
