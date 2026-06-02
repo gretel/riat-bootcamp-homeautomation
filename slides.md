@@ -236,9 +236,7 @@ style: |
 
 A case study in open-source governance, sustainability, and local-first design.
 
-<!--
-Welcome. Land the threat model early.
--->
+
 
 ---
 
@@ -248,9 +246,7 @@ A **free, open-source** smart home controller and integration platform. **One po
 
 Web browser, Android, or iOS. Voice commands via Google Assistant, Amazon Alexa, Apple Siri, or Home Assistant's own local "**Assist**" assistant.
 
-<!--
-Land this: local-first is the architecture, not a feature. Pause on 'no cloud services'.
--->
+
 
 ---
 
@@ -260,9 +256,7 @@ A **free, open-source** system to control your **ESP32, ESP8266, BK72xx, RP2040,
 
 Firmware is generated, compiled, and flashed from a single **YAML file**. **Over-the-air updates** are built in. **No IDE, no build tools, no opaque binary**.
 
-<!--
-Frame: user writes YAML, gets a working device. That's it.
--->
+
 
 ---
 
@@ -272,9 +266,7 @@ Frame: user writes YAML, gets a working device. That's it.
 
 ## A script that turned on some lights
 
-<!--
-Brief. Don't linger.
--->
+
 
 ---
 
@@ -288,9 +280,7 @@ Schoutsen's founding principle — ***local control and privacy first*** — was
 
 > *What happens to your home automation when the vendor shuts down, gets acquired, or changes its API?*
 
-<!--
-Threat model first. Apache 2.0 returns in Act IV.
--->
+
 
 ---
 
@@ -302,9 +292,7 @@ That question has been answered multiple times:
 - **Insteon** — shut down servers abruptly on **April 15, 2022** without notice, while the status page still read "All Services Online." The HA integration page now carries a permanent warning <sup>[4](https://www.theregister.com/2022/04/19/insteon_cloud_shutdown/)</sup>.
 - **Wink** — with one week's notice in May 2020, imposed a **$4.99/month subscription** on hardware sold with "no monthly fees" printed on the box <sup>[5](https://www.consumerreports.org/smart-home/wink-tells-users-pay-up-or-we-will-disable-smart-home-hub/)</sup>.
 
-<!--
-Optional: read the Insteon warning aloud if time.
--->
+
 
 ---
 
@@ -314,9 +302,7 @@ Optional: read the Insteon warning aloud if time.
 
 ## Hass.io and the usability problem
 
-<!--
-Transition.
--->
+
 
 ---
 
@@ -328,9 +314,7 @@ In **July 2017**, the team released **Hass.io** — a managed operating system (
 
 > *This is a recurring pattern in open source: software gets built by those who can compile from source, and the community scales when someone solves the installation problem. Hass.io was that solution.*
 
-<!--
-Hass.io dropped hours to minutes. That's the unlock.
--->
+
 
 ---
 
@@ -340,9 +324,7 @@ Hass.io dropped hours to minutes. That's the unlock.
 
 ## A student builds the missing piece
 
-<!--
-Transition: now the firmware side.
--->
+
 
 ---
 
@@ -361,9 +343,7 @@ The project started as two repositories:
 
 With **version 1.10.0**, both were merged and rebranded as **ESPHome** <sup>[7](https://esphome.io/changelog/v1.10.0/)</sup>. The YAML interface had become the primary way to use the project; the original names were "too technical."
 
-<!--
-Stop on the rename. The user surface won.
--->
+
 
 ---
 
@@ -379,9 +359,7 @@ ESPHome replaced that. You describe the sensor, the pin, the name in a text file
 
 > *The result: no IDE, no build tools, no closed firmware from the manufacturer.*
 
-<!--
-The user wants a temperature sensor, not a build environment. Stop on that line.
--->
+
 
 ---
 
@@ -401,9 +379,7 @@ ESPHome reads this file, converts it into the program that runs on the chip, and
 
 > *Mental model: describe what you want, not how the machine should do it. The declarative layer is the contribution.*
 
-<!--
-Read the YAML out loud. Stop.
--->
+
 
 ---
 
@@ -422,9 +398,7 @@ This is the structural opposite of consumer IoT firmware, distributed as signed 
 
 > *For work on verifiable and reproducible systems, this is not a minor point — it is the core value proposition stated differently.*
 
-<!--
-Pause. The contrast is structural: a YAML in git vs. a signed binary blob.
--->
+
 
 ---
 
@@ -434,9 +408,7 @@ Pause. The contrast is structural: a YAML in git vs. a signed binary blob.
 
 ## The commercial question
 
-<!--
-Transition.
--->
+
 
 ---
 
@@ -455,9 +427,7 @@ The model:
 
 > *This is the "open core plus services" model — the project stays free and open-source, a single paid service funds further development.*
 
-<!--
-Pose: can any company fork HA? That's the trade-off the Foundation addresses next.
--->
+
 
 ---
 
@@ -467,9 +437,7 @@ Pose: can any company fork HA? That's the trade-off the Foundation addresses nex
 
 ## An acquisition to preserve, not to monetize
 
-<!--
-Transition: the single-maintainer problem.
--->
+
 
 ---
 
@@ -488,9 +456,7 @@ Conditions of the sale:
 - **No revenue stream was gained**, no user base was monetised
 - Only motivation stated: **preventing abandonment**
 
-<!--
-Pose: what alternative institutional model could have prevented both abandonment and acquisition?
--->
+
 
 ---
 
@@ -500,9 +466,7 @@ Pose: what alternative institutional model could have prevented both abandonment
 
 ## Governance as a legal constraint
 
-<!--
-Transition: governance as a legal fact, not a promise.
--->
+
 
 ---
 
@@ -516,9 +480,7 @@ Projects under OHF include Music Assistant, Zigbee2MQTT, Z-Wave JS, Rhasspy, WLE
 
 > *A non-profit structure is the only governance model that makes "it can never be bought, it can never be sold" a legal reality rather than a promise* <sup>[12](https://www.home-assistant.io/blog/2024/11/18/event-wrapup-github-universe-24/)</sup>.
 
-<!--
-The legal firewall. Necessary but not sufficient: prevents acquisition, not drift or stagnation.
--->
+
 
 ---
 
@@ -530,9 +492,7 @@ The OHF also discontinued the **"Works with Home Assistant" cloud certification*
 
 **This is the threat model, made operational:** the OHF retired a revenue-adjacent program because certifying cloud products would dilute the local-first commitment. The decision is the principle.
 
-<!--
-Structural commitment over short-term partnership revenue.
--->
+
 
 ---
 
@@ -546,9 +506,7 @@ Most manufacturers — Tuya is the canonical example — do not publish local AP
 
 > *The Home Assistant community has functioned, in part, as a distributed reverse engineering apparatus, using the method to create interoperability that manufacturers declined to provide.*
 
-<!--
-Pause. Let the room react. LocalTuya is the concrete example.
--->
+
 
 ---
 
@@ -564,9 +522,7 @@ Home Assistant has been a vocal advocate for **Matter** — a smart home connect
 
 > *The governance tension: Matter's development was led by companies with strong interests in keeping smart home data flowing through their ecosystems. The spec is open; its principal backers each operate competing platforms.*
 
-<!--
-Standard is open. Governance is not.
--->
+
 
 ---
 
@@ -583,9 +539,7 @@ In 2024, HA out-contributed VS Code (Microsoft) and Flutter (Google) — project
 
 > *The scale is the distribution: 2 million independent installations, each running locally, each operator controlling their own data. There is no central fleet management, and the architecture intentionally makes wide-scale centralised deployment difficult.*
 
-<!--
-Headline is contributor count. #6 in 2025 is an AI-list artefact, not decline.
--->
+
 
 ---
 
@@ -599,9 +553,7 @@ Headline is contributor count. #6 in 2025 is an AI-list artefact, not decline.
 
 One runs on a server. One in a browser. One on a €5 chip.
 
-<!--
-Read the three bullets. Stop on the YAML line.
--->
+
 
 ---
 
@@ -617,9 +569,7 @@ Read the three bullets. Stop on the YAML line.
 - Apache 2.0
 - Open Home Foundation (non-profit steward)
 
-<!--
-Tie back to Act I. Voice runs offline. Governance is the firewall.
--->
+
 
 ---
 
@@ -631,9 +581,7 @@ Four questions for this audience.
 2. **Reverse engineering as method** — How should an open source project relate to RE contributions? Is RIAT's framing of RE as a cultural method a useful lens here?
 3. **The sustainability trap** — Otto Winter built critical infrastructure alone, then had to sell it. What institutional models could have prevented that? Does the OHF model solve this, or just delay it?
 4. **Apache 2.0 and the commons** — The permissive license enables Nabu Casa's model but also enables proprietary forks. The GPL copyleft license would prevent the latter but might have prevented the former. Is there a license that better matches OHF's stated values?
-<!--
-Plan ~20 min. Let the room pick. #2 and #3 usually land best with RIAT.
--->
+
 
 ---
 
@@ -650,9 +598,7 @@ Plan ~20 min. Let the room pick. #2 and #3 usually land best with RIAT.
 16. [State of the Open Home 2025 — HA blog](https://www.home-assistant.io/blog/2025/04/16/state-of-the-open-home-recap/)
 19. [GitHub — "The local-first rebellion"](https://github.blog/open-source/maintainers/the-local-first-rebellion-how-home-assistant-became-the-most-important-project-in-your-house/)
 
-<!--
-Top-10 handout.
--->
+
 
 ---
 
@@ -662,6 +608,4 @@ Top-10 handout.
 
 **RIAT Bootcamp**
 
-<!--
-Open the floor. If silence, start with #1.
--->
+
